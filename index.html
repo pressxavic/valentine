@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine?</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    .box {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      width: 320px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      color: #ff4d6d;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      position: relative;
+      height: 120px;
+    }
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      cursor: pointer;
+      position: absolute;
+    }
+
+    #yes {
+      background: #ff4d6d;
+      color: white;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    #no {
+      background: #ccc;
+      color: black;
+      left: 10px;
+      top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>Hi Shanthini 💖</h1>
+    <p>This thing is completely done just for you.</p>
+    <h3>Will you be my Valentine? 💘</h3>
+
+    <div class="buttons">
+      <button id="yes" onclick="sayYes()">Yes 💕</button>
+      <button id="no">No 🙈</button>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+
+    noBtn.addEventListener("mouseover", moveNo);
+    noBtn.addEventListener("click", moveNo);
+
+    function moveNo() {
+      const x = Math.random() * 200;
+      const y = Math.random() * 80;
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
+
+    function sayYes() {
+      document.body.innerHTML = `
+        <div style="
+          font-family: Arial;
+          background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;">
+          <div style="background:white;padding:40px;border-radius:20px;">
+            <h1>YAYYY!!! 💖🥹</h1>
+            <p>You just made me the happiest person ever.</p>
+            <p>I can’t wait to celebrate many Valentines with you ❤️</p>
+          </div>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
